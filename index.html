@@ -10,10 +10,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream:#F7F1E8; --cream-deep:#EFE4D3; --ink:#3A2E28; --ink-soft:#6B5D54;
-    --lila:#9B7EBD; --lila-pale:#EDE7F5; --rose:#B86B77; --rose-pale:#F6E9EC;
-    --olive:#7C8B5A; --cta:#D6483E; --cta-dark:#B83A31;
-    --shadow: 0 12px 32px rgba(58,46,40,0.08);
+    --cream:#FAF6EF; --cream-deep:#F4ECF9; --ink:#3D2A56; --ink-soft:#6B5D74;
+    --lila:#8B6BB5; --lila-pale:#EDE3F7; --rose:#C77B8C; --rose-pale:#F7E3DC;
+    --olive:#4F9C74; --cta:#6B4A96; --cta-light:#9B7EBD; --cta-dark:#56397D;
+    --peach:#FBEADB; --peach-ink:#A9702E; --mint:#E4F5EC;
+    --shadow: 0 12px 32px rgba(61,42,86,0.10);
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -22,8 +23,12 @@
   .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
   section{padding:68px 0;}
   .band-deep{background:var(--cream-deep);}
-  .eyebrow{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--rose);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
-  .eyebrow::before{content:'';display:inline-block;width:18px;height:1px;background:var(--rose);}
+  .eyebrow{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--cta);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+  .eyebrow::before{content:'';display:inline-block;width:4px;height:16px;border-radius:2px;background:var(--lila);}
+  .pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:10px;}
+  .pill.lila{background:var(--lila-pale);color:var(--cta);}
+  .pill.mint{background:var(--mint);color:var(--olive);}
+  .pill.peach{background:var(--peach);color:var(--peach-ink);}
   p.lede{font-size:18px;color:var(--ink-soft);}
 
   /* HERO — Mi Plan de Vuelo gets real protagonism */
@@ -35,8 +40,8 @@
   .hero .tagline{font-size:clamp(18px,3vw,22px);color:var(--ink-soft);max-width:520px;margin:0 auto 32px;font-family:'Fraunces',serif;font-style:italic;}
   .hero-img{width:100%;max-width:400px;border-radius:20px;box-shadow:var(--shadow);margin:0 auto 30px;display:block;}
 
-  .cta-btn{display:inline-block;background:var(--cta);color:#fff;font-family:'Inter',sans-serif;font-weight:700;font-size:16px;text-decoration:none;padding:18px 34px;border-radius:30px;box-shadow:0 10px 24px rgba(214,72,62,0.32);transition:transform .15s ease, box-shadow .15s ease;}
-  .cta-btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(214,72,62,0.4);background:var(--cta-dark);}
+  .cta-btn{display:inline-block;background:linear-gradient(135deg, var(--cta-light), var(--cta));color:#fff;font-family:'Inter',sans-serif;font-weight:700;font-size:16px;text-decoration:none;padding:18px 34px;border-radius:30px;box-shadow:0 10px 24px rgba(107,74,150,0.32);transition:transform .15s ease, box-shadow .15s ease;}
+  .cta-btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(107,74,150,0.4);background:linear-gradient(135deg, var(--cta), var(--cta-dark));}
   .cta-sub{font-size:13px;color:var(--ink-soft);margin-top:14px;}
   .trust-row{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:center;margin-top:24px;font-size:13px;color:var(--ink-soft);}
   .trust-row span{display:flex;align-items:center;gap:6px;}
@@ -90,9 +95,9 @@
   .feature-card{display:flex;gap:22px;background:#fff;border-radius:18px;padding:24px;box-shadow:var(--shadow);margin-bottom:22px;align-items:flex-start;}
   @media(max-width:600px){.feature-card{flex-direction:column;}}
   .feature-card img{width:120px;height:120px;object-fit:cover;border-radius:12px;flex-shrink:0;}
-  .tag{display:inline-flex;gap:8px;align-items:center;font-size:12px;font-weight:700;color:var(--rose);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+  .tag{display:inline-flex;gap:8px;align-items:center;background:var(--peach);color:var(--peach-ink);padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
   .tag .old{text-decoration:line-through;color:var(--ink-soft);font-weight:500;text-transform:none;letter-spacing:0;}
-  .tag .free{color:var(--olive);}
+  .tag .free{color:var(--olive);font-weight:700;}
   .feature-card h3{font-size:18px;margin-bottom:6px;}
   .feature-card p{margin:0;font-size:14.5px;color:var(--ink-soft);}
 
@@ -158,7 +163,7 @@
   <div class="brand">Mi Plan <em>de Vuelo</em></div>
   <div class="hero-divider"></div>
   <p class="tagline">La plataforma web que transforma tu idea en un emprendimiento listo para vender.</p>
-  <img class="hero-img" src="img-mama-hijo-trabajo.png" alt="Mamá acompañando a su hijo mientras él dibuja a su lado">
+  <img class="hero-img" src="img-hero-plataforma.jpg" alt="Mamá y su hijo frente a la plataforma Mi Plan de Vuelo, con el dashboard del negocio en pantalla">
   <a class="cta-btn" href="https://go.hotmart.com/G106481256V?dp=1">Quiero mi Plan de Vuelo por $20 USD</a>
   <div class="cta-sub">Precio de lanzamiento · Pago único · 2 bonos incluidos</div>
   <div class="trust-row">
@@ -249,15 +254,17 @@
     <p class="lede" style="margin-top:14px;margin-bottom:26px;">No es un PDF más. Es un sistema completo con cuatro piezas que trabajan juntas.</p>
 
     <div class="feature-card">
-      <img src="img-plan-notebook.png" alt="Mamá escribiendo su plan en el cuaderno, con la plataforma abierta y su hijo jugando cerca">
+      <img src="img-workbook-organizar.jpg" alt="Mamá organizando en carpetas de colores toda la información de su negocio">
       <div>
+        <div class="pill lila">Guía principal</div>
         <h3>Workbook guiado</h3>
         <p>Te explica el qué y el por qué de cada paso, te guía con preguntas y ejercicios, y te da ejemplos con Sofía (una mamá ficticia) para que veas cómo aplicarlo en un caso real.</p>
       </div>
     </div>
     <div class="feature-card">
-      <img src="img-celebracion.png" alt="Mamá acercándose a su laptop para ver el dashboard de su negocio">
+      <img src="img-plataforma-graficos.jpg" alt="Mamá viendo en su laptop el dashboard con las gráficas de su negocio">
       <div>
+        <div class="pill lila">Plataforma</div>
         <h3>Plataforma web interactiva</h3>
         <p>Sin Excel. Hace los cálculos por ti, organiza toda la info en un solo lugar, te muestra tu avance módulo a módulo y te entrega un dashboard visual de tu negocio: ingresos, gastos, ganancia neta y tu progreso de 30 días.</p>
       </div>
@@ -265,12 +272,14 @@
     <div class="feature-card">
       <img src="sofia.png" alt="Sofía, la asistente virtual del kit" onerror="this.style.display='none'">
       <div>
+        <div class="pill mint">Asistente incluido</div>
         <h3>Asistente virtual de Mi Plan de Vuelo — Sofía</h3>
         <p>Tu guía personalizada que te acompaña 24/7. No es una IA genérica: está entrenada con la metodología del sistema para responderte con el mismo tono cercano de todo el kit.</p>
       </div>
     </div>
     <div class="feature-card">
       <div>
+        <div class="pill lila">Lanzamiento</div>
         <h3>Plan de lanzamiento de 9 días</h3>
         <p>Un guion completo, día por día, para tus días 22 al 30: qué publicar, a quién escribirle y cómo cerrar tus primeras ventas. No tienes que inventar nada.</p>
       </div>
@@ -343,6 +352,7 @@
     <div class="eyebrow">Al día 30</div>
     <h2>La diferencia entre seguir soñando y construirlo</h2>
     <p class="lede" style="margin-top:14px;">No es magia ni suerte. Es lo que pasa cuando dejas de improvisar y sigues un sistema probado, un paso a la vez.</p>
+    <img src="img-resultados-gratitud.jpg" alt="Mamá agradecida, con la mano en el corazón, celebrando su progreso" style="width:100%;max-width:220px;border-radius:18px;box-shadow:var(--shadow);margin:26px auto 0;display:block;">
     <div class="results-box" style="margin-top:26px;">
       <div class="results-stats">
         <div><strong>10</strong><span>Módulos completados</span></div>
@@ -393,7 +403,7 @@
     </div>
 
     <div class="feature-card">
-      <img src="img-plan-notebook-2.png" alt="Mujer escribiendo prompts en su cuaderno">
+      <img src="img-bono-prompts.jpg" alt="Mamá revisando en su teléfono los prompts para ChatGPT mientras carga a su hijo">
       <div>
         <div class="tag">Bono 2 <span class="old">Valor referencial $37 USD</span> <span class="free">Hoy gratis</span></div>
         <h3>Tus 100 Prompts para ChatGPT</h3>
@@ -502,7 +512,7 @@
 <section class="final band-deep">
   <div class="wrap">
     <h2>Querida mamá emprendedora</h2>
-    <img src="img-celebracion-2.png" alt="Mamá jugando con su hijo en el piso, celebrando el tiempo juntos" style="width:100%;max-width:280px;border-radius:18px;box-shadow:var(--shadow);margin:20px 0;">
+    <img src="img-final-celebracion.jpg" alt="Mamá celebrando con los brazos en alto frente a su laptop" style="width:100%;max-width:280px;border-radius:18px;box-shadow:var(--shadow);margin:20px 0;">
     <p class="lede">Tu negocio no tiene que ser enorme para ser significativo. Puede empezar con una clienta, con un producto, con un mensaje bien escrito. Lo importante es que empiece.</p>
     <p class="lede">Y si algún día sientes que no puedes, recuerda por qué empezaste. Recuerda que tus hijos te ven. Que cada paso que das les enseña que los sueños se construyen, no se esperan.</p>
     <p class="signoff">Tú tienes la idea. Yo te doy el mapa. El vuelo es tuyo. — Melisa</p>
